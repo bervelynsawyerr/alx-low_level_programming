@@ -7,7 +7,7 @@
 int main(void)
 {
 	int i;
-	int i;
+	int e;
 	int g;
 
 	while (e < 58)
