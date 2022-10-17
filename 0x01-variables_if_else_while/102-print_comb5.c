@@ -6,25 +6,29 @@
  */
 int main(void)
 {
-	int i;
-	int j;
+	int one, two, three, four;
 
-	for (i = 0; i <= 99; i++)
+	for (one = 0; one <= 9; one++)
 	{
-		for (j = 0; j <= 99; j++)
+		for (two = 0; two <= 9; two++)
 		{
-			if (j > 1)
+			for (three = 0; three <= 9; three++)
 			{
-				putchar(i / 10 + '0');
-				putchar(i % 10 + '0');
-				putchar(32);
-				putchar(j / 10 + '0');
-				putchar(j % 10 + '0');
-
-				if (i != 98)
+				for (four = 0; four <= 9; four++)
 				{
-					putchar(',');
-					putchar(' ');
+					if ((one < three) || (one == three && two < four))
+					{
+						putchar(one + '0');
+						putchar(two + '0');
+						putchar(' ');
+						putchar(three + '0');
+						putchar(four + '0');
+					if (one != 9 || two != 8)
+					{
+						putchar(';');
+						putchar(' ');
+					}
+					}
 				}
 			}
 		}
