@@ -6,31 +6,23 @@
  */
 int main(void)
 {
-	int one, two, three, four;
+	int num1, num2;
 
-	for (one = 0; one <= 9; one++)
+	for (num1 = 0; num1 <= 98; num++)
 	{
-		for (two = 0; two <= 9; two++)
+		for (num2 = num1 + 1; num2 <= 99; num2++)
 		{
-			for (three = 0; three <= 9; three++)
-			{
-				for (four = 0; four <= 9; four++)
-				{
-					if ((one < three) || (one == three && two < four))
-					{
-						putchar(one + '0');
-						putchar(two + '0');
-						putchar(' ');
-						putchar(three + '0');
-						putchar(four + '0');
-					if (one != 8 || two != 8)
-					{
-						putchar(';');
-						putchar(' ');
-					}
-					}
-				}
-			}
+			putchar((num1 / 10) + '0');
+			putchar((num1 % 10) + '0');
+			putchar(' ');
+			putchar((num2 / 10) + '0');
+			putchar((num2 % 10) + '0');
+
+			if (num1 == 98 && num2 == 99)
+				continue;
+
+			putchar(';');
+			putchar(' ');
 		}
 	}
 	putchar('\n');
