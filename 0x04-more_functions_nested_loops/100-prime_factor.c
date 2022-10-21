@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "main.h"
+#include <math.h>
 
 /**
  * main - finds and prints the largest prime factor of the number
@@ -32,7 +32,7 @@ int main(void)
 	if (n > 2)
 		max = n;
 
-	printf("ld\n", max);
+	printf("%ld\n", max);
 
 	return (0);
 }
