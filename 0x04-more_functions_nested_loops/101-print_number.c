@@ -13,7 +13,7 @@ void print_number(int n)
 	digit =  0;
 	if (n < 0)
 	{
-		_putchar('_');
+		_putchar('-');
 		temp = -n;
 	}
 	else
