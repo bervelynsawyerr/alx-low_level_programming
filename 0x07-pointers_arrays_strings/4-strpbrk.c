@@ -9,20 +9,16 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int i, j;
+	char c, *p;
 
-	for (i = 0; *(s + i), i++)
+	for (c = *s; c != 0; s++, c = *s)
 	{
-		for (j = 0; *(accept + j); j++)
+		for (p = accept; *p != 0; p++)
 		{
-			if (*(s + i) == *(accept + j))
+			if (c == *p)
 			{
-				break;
+				return (s);
 			}
-		}
-		if (*(accept + j) != '\0')
-		{
-			return (s + i);
 		}
 	}
 	return (0);
