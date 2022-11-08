@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * **alloc_grid - creates a two dimensional array of ints
@@ -16,6 +17,7 @@ int **alloc_grid(int width, int height)
 
 	if (height <= 0 || width <= 0)
 		return (NULL);
+
 	arr = (int **) malloc(sizeof(int *) * height);
 
 	if (arr == NULL)
