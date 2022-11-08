@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-#include <atdlib.h>
+#include <stdlib.h>
 
 /**
  * _strdup - allocates space in memory
