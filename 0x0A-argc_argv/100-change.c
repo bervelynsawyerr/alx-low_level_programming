@@ -1,83 +1,48 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <stdbool.h>
 
 /**
- * make_change - prints change for an amount of money
- * @n: amount to be changed
- * Return: coins
- */
-
-int make_change(int n)
-{
-	int coins, quarters, dimes, nickels, twocents, pennies;
-
-	coins = 0;
-	quarters = 0;
-	dimes = 0;
-	nickels = 0;
-	twocents = 0;
-	pennies = 0;
-
-	while (n > 0)
-	{
-		if (n >= 25)
-		{
-			n -= 25;
-			quarters += 1;
-		}
-		else if (n >= 10)
-		{
-			n -= 10;
-			dimes += 1;
-		}
-		else if (n >= 5)
-		{
-			n -= 5;
-			nickels += 1;
-		}
-		else if (n >= 2)
-		{
-			n -= 2;
-			twocents += 1;
-		}
-		else
-		{
-			n -= 1;
-			pennies += 1;
-		}
-	}
-	coins = quarters + dimes + nickels + twocents + pennies;
-
-	return (coins);
-}
-
-/**
- * main - prints minimum number of coins to make change
- * @argc: number of arguments
- * @argv: array of arguments
- * Return: (0)
+ * main - prints the minimum number of coins
+ * to make change for an amount of money
+ * @argc: holds the number of arguements passed
+ * @argv: the array pointer taht holds the arguement passed
+ * Return: always 0 (success)
  */
 
 int main(int argc, char *argv[])
 {
-	int coins;
+	int position, total, change, aux;
+	int coins[] = {25, 10, 5, 2, 1};
+
+	position = total = change = aux = 0;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	else if (atoi(argv[1] < 0))
+
+	total = atoi(argv[1]);
+
+	if (total <= 0)
 	{
 		printf("0\n");
+		return (0);
 	}
-	else
+
+	while (coins[position] != '\0')
+
 	{
-		coins = make_change(atoi(argv[1]));
-		printf("%d\n", coins);
+		if (total >= coins[position])
+		{
+			aux = (total / coins[position]);
+			change += aux;
+			total -= coins[position] * aux;
+		}
+
+		position++;
 	}
+
+	printf("%d\n", change);
 	return (0);
 }
