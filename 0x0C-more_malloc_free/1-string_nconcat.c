@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * string_nconcat - prints concatenate string
@@ -22,14 +23,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s1[l1])
 		l1++;
 
-	a = malloc(sizeof(*a) * 11 + n + 1);
+	a = malloc(sizeof(*a) * l1 + n + 1);
 
 	if (a == NULL)
 		return (NULL);
 
-	for (i = 0; e = 0; i < (11 + n); i++)
+	for (i = 0; e = 0; i < (l1 + n); i++)
 	{
-		if (i < 11)
+		if (i < l1)
 		{
 			a[i] = s1[i];
 		}
