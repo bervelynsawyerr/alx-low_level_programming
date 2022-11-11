@@ -11,7 +11,7 @@ void add_nums(char *final_prod, char *next_prod, int next_len);
 /**
  * find_len - Finds the length of a string
  * @str: The string to be measured
- * Return: The lenght of the string
+ * Return: The length of the string
  */
 int find_len(char *str)
 {
@@ -96,7 +96,7 @@ void get_prod(char *prod, char *mult, int digit, int zeroes)
 {
 	int mult_len, num, tens = 0;
 
-	mult_len = find_len(nult) - 1;
+	mult_len = find_len(mult) - 1;
 	mult += mult_len;
 
 	while (*prod)
@@ -192,11 +192,11 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (*(argv[1] == '0'))
+	if (*(argv[1]) == '0')
 		argv[1] = iterate_zeroes(argv[1]);
-	if (*(argv[2] == '0'))
+	if (*(argv[2]) == '0')
 		argv[2] = iterate_zeroes(argv[2]);
-	if (*(argv[1] == '\0' || *(argv[2]) == '\0'))
+	if (*(argv[1]) == '\0' || *(argv[2]) == '\0')
 	{
 		printf("0\n");
 		return (0);
